@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Set the C file name
+CFILE="main.c"
+
+# Generate the assembly code in Intel syntax and save it to an output file
+OUTPUT_FILE="$(basename "$CFILE" .c).s"
+gcc -S -masm=intel "$CFILE" -o "$OUTPUT_FILE"

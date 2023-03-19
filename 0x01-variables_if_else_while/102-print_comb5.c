@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 /**
  *Description:main-lists pair of combinations of digits
  *Return:always successful
@@ -30,3 +28,4 @@ int main(void)
 	}
 	putchar('\n');
 	return (0);
+}

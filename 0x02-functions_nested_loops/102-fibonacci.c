@@ -1,31 +1,20 @@
 #include <stdio.h>
-/**
- *print_50_Fibonacci_numbers:- prints 50 Fibonacci numbers
- *Return: void
- */
-void print_50_Fibonacci_numbers(void)
+void print_50_Fibonacci_numbers() 
 {
-	int first = 1, second = 2, next, i;
-	long int first = 1, second = 2, next, i;
+    long int first = 1, second = 2, next, i;
 
-	printf("%d, %d", first, second);
-	printf("%ld, %ld", first, second);
-	for (i = 0; i < 48; i++)
-	{
-	next = first + second;
-	printf(", %d", next);
-	printf(", %ld", next);
-	first = second;
-	second = next;
-	}
-	printf("\n");
+    printf("%ld, %ld", first, second);
+    for (i = 2; i < 50; i++) 
+    {
+    next = first + second;
+    printf(", %ld", next);
+    first = second;
+    second = next;
+    }
+    printf("\n");
 }
-/**
- * main-entry point
- * Return:0 on success
- */
-int main(void)
+int main() 
 {
-	print_50_Fibonacci_numbers();
-	return (0);
+    print_50_Fibonacci_numbers();
+    return 0;
 }

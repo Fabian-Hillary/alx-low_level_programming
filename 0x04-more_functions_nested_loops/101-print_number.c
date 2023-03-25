@@ -3,37 +3,20 @@
 /**
  *print_number-prints out an integer
  *@n: -number passed
- *Return:void
+ *Return: Nothing
  */
 void print_number(int n)
 {
-	unsigned int m, d, count;
+	unsigned int k = n;
 
 	if (n < 0)
 	{
-	putchar(45);
-	n = -n;
-	m = n * -1;
+	n *= -1;
+	k = n;
+	putchar('-');
 	}
-	else
-	{
-	m = n;
-	}
-	if (n / 10)
-	{
-	print_number(n / 10);
-	}
-	d = m;
-	count = 1;
-
-	while (d > 9)
-	{
-	d /= 10;
-	count *= 10;
-	}
-	for (; count >= 1; count /= 10)
-	{
-	putchar(((m / count) % 10) + 48);
-	}
-	putchar(n % 10 + 48);
+	k /= 10;
+	if (k != 0)
+	print_number(k);
+	putchar((unsigned int) n % 10 + '0');
 }

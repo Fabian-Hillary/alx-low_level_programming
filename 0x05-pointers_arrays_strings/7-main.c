@@ -9,7 +9,7 @@ int main(void)
 {
     char *str;
 
-    str = "rton!";
+    str = "012345!";
     puts_half(str);
     return (0);
 }

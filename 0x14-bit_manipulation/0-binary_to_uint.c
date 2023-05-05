@@ -10,20 +10,15 @@
 unsigned int binary_to_uint(const char *b)
 {
 	int i;
-	unsigned int decimal = 0;
-	int len = strlen(b);
+	unsigned int dec_val = 0;
 
-	for (i = len - 1; i >= 0; i--)
+	if (!b)
+		return (0);
+	for (i = 0; b[i]; i++)
 	{
-		if (b[i] == '1')
-		{
-			decimal += pow(2, len - i - 1);
-		}
-		else if (b[i] != '0')
-		{
+		if (b[i] < '0' || b[i] > '1')
 			return (0);
-		}
+		dec_val = 2 * dec_val + (b[i] - '0');
 	}
-
-	return (decimal);
+	return (dec_val);
 }
